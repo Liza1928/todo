@@ -6,6 +6,13 @@ authors = ["Уманец Елизавета <e.umanets@zebrains.team>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+fastapi = "^0.63.0"
+fastapi-admin = "^0.3.3"
+tortoise-orm = "^0.16.21"
+pydantic = "^1.8.1"
+uvicorn = "^0.13.4"
+asyncpg = "^0.22.0"
+aerich = "^0.5.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
