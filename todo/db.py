@@ -15,7 +15,7 @@ TORTOISE_ORM = {
         )},
     "apps": {
         "models": {
-            "models": ["app.models", "aerich.models"],
+            "models": ["todo.models", "aerich.models"],
             "default_connection": "default",
         },
     },
@@ -31,7 +31,7 @@ def init_db(app: FastAPI) -> None:
             host="127.0.0.1",
             db="todo"
         ),
-        modules={"models": ["app.models"]},
+        modules={"models": ["todo.models"]},
         generate_schemas=False,
         add_exception_handlers=True,
     )

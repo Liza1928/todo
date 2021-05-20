@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "todo"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Уманец Елизавета <e.umanets@zebrains.team>"]
 
@@ -13,6 +13,7 @@ pydantic = "^1.8.1"
 uvicorn = "^0.13.4"
 asyncpg = "^0.22.0"
 aerich = "^0.5.1"
+celery = "^5.0.5"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
