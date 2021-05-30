@@ -6,7 +6,7 @@ from tortoise.contrib.fastapi import HTTPNotFoundError
 from pydantic import BaseModel
 from starlette import status
 
-from app.models import Task_Pydantic, TaskIn_Pydantic, Tasks
+from todo.models import Task_Pydantic, TaskIn_Pydantic, Tasks
 
 router = APIRouter(
     prefix="/tasks",
