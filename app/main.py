@@ -1,9 +1,10 @@
-from .routers import tasks
-
 import logging
 
-from .db import init_db
 from fastapi import FastAPI
+
+
+from todo.db import init_db
+from todo.routers import tasks
 
 log = logging.getLogger(__name__)
 
@@ -20,7 +21,7 @@ app = create_application()
 @app.on_event("startup")
 async def startup_event():
     print("Starting up...")
-    init_db(app)
+    await init_db(app)
 
 
 @app.on_event("shutdown")
