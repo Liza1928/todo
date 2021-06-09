@@ -1,4 +1,4 @@
-from todo import __version__
+from utils import __version__
 
 
 def test_version():

@@ -16,6 +16,10 @@ class Tasks(models.Model):
     def __str__(self):
         return self.text
 
+    @classmethod
+    def get_all(cls):
+        return cls.all()
 
-Task_Pydantic = pydantic_model_creator(Tasks, name="Task")
-TaskIn_Pydantic = pydantic_model_creator(Tasks, name="TaskIn", exclude_readonly=True)
+
+Task_Pydantic = pydantic_model_creator(Tasks, name="Tasks")
+TaskIn_Pydantic = pydantic_model_creator(Tasks, name="TasksIn", exclude_readonly=True)

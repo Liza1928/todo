@@ -8,5 +8,6 @@ celery_app = Celery(
     )
 
 celery_app.conf.task_routes = {
-        "todo.core.celery_worker.test": "test-queue"}
+ "core.celery_worker.create_repeated_task": "test-queue"
+}
 celery_app.conf.update(task_track_started=True)

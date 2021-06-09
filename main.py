@@ -1,10 +1,14 @@
+import asyncio
 import logging
+import os
 
 from fastapi import FastAPI
+from tortoise import Tortoise
+from tortoise.contrib.fastapi import register_tortoise
 
-
-from todo.db import init_db
-from todo.routers import tasks
+from configs.db import DB_CONFIG
+from models.tasks import Tasks
+from routers import tasks
 
 log = logging.getLogger(__name__)
 
@@ -16,12 +20,16 @@ def create_application() -> FastAPI:
 
 
 app = create_application()
-
+register_tortoise(
+    app,
+    config=DB_CONFIG,
+    generate_schemas=True,
+    add_exception_handlers=True,
+)
 
 @app.on_event("startup")
 async def startup_event():
     print("Starting up...")
-    await init_db(app)
 
 
 @app.on_event("shutdown")
