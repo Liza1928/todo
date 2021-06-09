@@ -11,7 +11,7 @@ from utils import task_crud
 def setup_repeated_tasks(sender, **kwargs):
 
     sender.add_periodic_task(
-        crontab(hour=0, minute=30, day_of_week=1),
+        crontab(hour=0, minute=0),
         create_repeated_task.s()
     )
 
