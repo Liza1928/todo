@@ -26,8 +26,6 @@ async def delete_task(task_id: int):
 
 async def clone_repeated():
     repeated_tasks = await Tasks.filter(repeat=True)
-    print(repeated_tasks)
     for task in repeated_tasks:
-        print(task.__dict__)
         new_task = await Tasks.create(text=task.text, repeat=task.repeat)
         await new_task.save()

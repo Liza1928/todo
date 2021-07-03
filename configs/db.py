@@ -1,13 +1,12 @@
-import os
+from settings import DATABASE_URL
 
 DB_CONFIG = {
     "connections": {
-        "default": os.environ.get("DATABASE_URL"),
-        "test": "sqlite://:memory:"
+        "default": DATABASE_URL,
     },
     "apps": {
         "models": {
-            "models": ["models"],
+            "models": ["models", "aerich.models"],
             "default_connection": "default",
         }
     }
